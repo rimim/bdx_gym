@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini-BDX Duckling</title>
+  <meta http-equiv="refresh" content="600">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      box-sizing: border-box;
+    }
+    video {
+      width: 100%;
+      height: auto;
+      max-height: 50vh;
+      margin-bottom: 10px;
+      outline: none;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+    a {
+      display: block;
+      width: 100%;
+    }
+    h1, h2 {
+      margin: 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>BDX Duckling</h1>
+  <video autoplay loop muted playsinline>
+    <source src="https://raw.githubusercontent.com/rimim/bdx_gym/raw/main/duck.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <h2>Checkpoint 0</h2>
+  <a href="https://raw.githubusercontent.com/rimim/bdx_gym/raw/main/plot.png" target="_blank">
+    <img src="https://raw.githubusercontent.com/rimim/bdx_gym/raw/main/plot.png" alt="Mini-BDX Duckling Plot">
+  </a>
+  <a href="https://raw.githubusercontent.com/rimim/bdx_gym/main/tensorboard.png" target="_blank">
+    <img src="https://raw.githubusercontent.com/rimim/bdx_gym/rimim/duck_gym/main/tensorboard.png" alt="Tensorboard">
+  </a>
+  <video autoplay loop muted playsinline>
+    <source src="https://raw.githubusercontent.com/rimim/bdx_gym/raw/main/sim2sim-duck.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <script>
+    const video = document.querySelector('video');
+    video.addEventListener('click', function() {
+      if (!document.fullscreenElement) {
+        if (video.requestFullscreen) {
+          video.requestFullscreen();
+        } else if (video.webkitRequestFullscreen) {
+          video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) {
+          video.msRequestFullscreen();
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+        }
+      }
+    });
+</body>
+</html>
